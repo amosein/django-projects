@@ -1,5 +1,18 @@
 {% extends "base.html"%}
 
 {% block detail %}
+
   <h3> Home Page </h3>
+  <hr/>
+
+  {% for i in todos %}
+    <h3> Title = {{ i.title }}</h3>
+    <p> Body = {{ i.body }}</p>
+    {# i used p tag for start and end of small tag to separate it and #}
+    {# use it default and automate padding that separates the two small tags#}
+    <p><small> Created at = {{ i.created_at }}</small></p>
+    <small> Updated at = {{ i.updated_at }}</small>
+    <hr/>
+  {% endfor%}
+
 {% endblock%}
