@@ -1,0 +1,11 @@
+What i want to use here :
+
+1| Create a Model for Todo
+2| Create related functions and a url
+3| CRUD on Todos
+4| Use Templates
+5| Use Forms and ModelForms
+6| Create users with User
+7| Login and Logout
+8| Use bootstrap for html files
+9| Creativity
