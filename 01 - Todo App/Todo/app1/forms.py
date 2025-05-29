@@ -9,3 +9,6 @@ class UpdateNoteForm(forms.ModelForm):
     class Meta:
         model = Todo
         fields = ["title", "body"]
+
+class MiddleUpdateForm(forms.Form):
+    id_ = forms.CharField()

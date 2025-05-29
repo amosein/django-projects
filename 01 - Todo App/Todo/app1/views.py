@@ -43,3 +43,24 @@ def update(request, id):
         # so that data will be shown on the html template that we have.
         form = UpdateNoteForm(instance=todo_data)
     return render(request, "update.html", context={"form": form})
+
+
+def middle_update(request):
+    """
+    information of creation :
+
+    this function is just a middle man that takes the id for a Todo record
+    and then send it to the main update url and its related function to work
+    and the main part is in update function
+    i add this part to use the project easier and i map this middle_update
+    to the same name in my navbar.
+
+    """
+    if request.method == "POST":
+        form = MiddleUpdateForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            return redirect("update", id=cd["id_"])
+    else:
+        form = MiddleUpdateForm()
+    return render(request, "middle_update.html", {"form": form})
