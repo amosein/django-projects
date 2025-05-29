@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import  HttpResponse
 from .models import Todo
 from .forms import *
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -17,7 +18,11 @@ def create(request):
     # check for post method
     # if it was post then we check it
     if request.method == "POST":
-        pass
+        form = CreateNoteForm(request.POST)
+        if form.is_valid():
+            clean_data = form.cleaned_data
+            Todo.objects.create(title=clean_data["title"], body=clean_data["body"])
+            messages.success(request, "Todo Saved Successfully !", "success")
     # otherwise its get so we show the page
     else:
         form = CreateNoteForm()
