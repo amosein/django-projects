@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block detail %}
+  <h3> Title = {{ data.title }}</h3>
+  <p> Body = {{ data.body }}</p>
+  <p><small> Created at = {{ data.created_at }}</small></p>
+  <small> Updated at = {{ data.updated_at }}</small>
+  <hr/>
+{% endblock %}

@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.http import  HttpResponse
-
-from University_Project.Test.c6 import total_data
 from .models import Todo
 
 # Create your views here.
@@ -12,4 +10,4 @@ def home(request):
 
 def detail(request, id):
     todo_data = Todo.objects.get(id=id)
-    return render(request, "detail", context={"data": todo_data})
+    return render(request, "detail.html", context={"data": todo_data})
