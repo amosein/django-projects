@@ -28,3 +28,18 @@ def create(request):
     else:
         form = CreateNoteForm()
     return render(request, "create.html", context={"form": form})
+
+def update(request, id):
+    todo_data = Todo.objects.get(id=id)
+    if request.method == "POST":
+        form = UpdateNoteForm(request.POST, instance=todo_data)
+        if form.is_valid():
+            form.save()
+            # extra tag is for our bootsrap that show us a good message in green background
+            messages.success(request, "Data Updated Successfully !", "success")
+            return redirect("home")
+    else:
+        # for showing the data related to the special record we use instance in forms
+        # so that data will be shown on the html template that we have.
+        form = UpdateNoteForm(instance=todo_data)
+    return render(request, "update.html", context={"form": form})
