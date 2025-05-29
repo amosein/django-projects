@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import  HttpResponse
 from .models import Todo
 from .forms import *
@@ -23,6 +23,7 @@ def create(request):
             clean_data = form.cleaned_data
             Todo.objects.create(title=clean_data["title"], body=clean_data["body"])
             messages.success(request, "Todo Saved Successfully !", "success")
+            return redirect( "home")
     # otherwise its get so we show the page
     else:
         form = CreateNoteForm()

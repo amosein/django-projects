@@ -20,6 +20,8 @@
 {% include "navbar.html"%}
   {# define a div and connect it to the class i write to use the padding#}
   <div class="jumbotron">
+    {# this will add messages from any source in our program #}
+    {% include "messages.html" %}
 
     {# its to tell my html file where to put the information in order to be#}
     {# added in base file which we inherit from to work properly#}
