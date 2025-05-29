@@ -1,18 +1,29 @@
 {% extends "base.html"%}
 
+<!--Old version of showing detail-->
+<!--  {% for i in todos %}-->
+<!--    <h3> Title = {{ i.title }}</h3>-->
+<!--    <p> Body = {{ i.body }}</p>-->
+<!--    {# i used p tag for start and end of small tag to separate it and #}-->
+<!--    {# use it default and automate padding that separates the two small tags#}-->
+<!--    <p><small> Created at = {{ i.created_at }}</small></p>-->
+<!--    <small> Updated at = {{ i.updated_at }}</small>-->
+<!--    <hr/>-->
+<!--  {% endfor%}-->
+
 {% block detail %}
 
-  <h3> Home Page </h3>
-  <hr/>
+<h3> Home Page </h3>
+<hr/>
 
-  {% for i in todos %}
-    <h3> Title = {{ i.title }}</h3>
-    <p> Body = {{ i.body }}</p>
-    {# i used p tag for start and end of small tag to separate it and #}
-    {# use it default and automate padding that separates the two small tags#}
-    <p><small> Created at = {{ i.created_at }}</small></p>
-    <small> Updated at = {{ i.updated_at }}</small>
-    <hr/>
-  {% endfor%}
+
+  <div class="card">
+    {% for i in todos %}
+      <a class="card-body" href="{% url 'details' i.id %}">
+        {{ i.title }}
+      </a>
+      <br/>
+    {% endfor %}
+  </div>
 
 {% endblock%}
