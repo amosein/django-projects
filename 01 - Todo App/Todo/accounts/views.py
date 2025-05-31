@@ -16,3 +16,15 @@ def user_register(request):
     else:
         form = RegisterUserForm()
     return render(request, "register.html", {"form": form})
+
+def user_login(request):
+    if request.method == "POST":
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            username = cd["username"]
+            password = cd["password"]
+
+    else:
+        form = UserLoginForm()
+    return render(request, "login.html", {"form": form})
