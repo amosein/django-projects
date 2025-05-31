@@ -12,3 +12,6 @@ class UpdateNoteForm(forms.ModelForm):
 
 class MiddleUpdateForm(forms.Form):
     id_ = forms.CharField()
+
+class MiddleDeleteForm(forms.Form):
+    id_ = forms.CharField()

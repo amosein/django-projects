@@ -64,3 +64,10 @@ def middle_update(request):
     else:
         form = MiddleUpdateForm()
     return render(request, "middle_update.html", {"form": form})
+
+def middle_delete(request):
+    if request.method == "POST":
+        pass
+    else:
+        form = MiddleDeleteForm()
+    return render(request, "middle_delete.html", {"form": form})
