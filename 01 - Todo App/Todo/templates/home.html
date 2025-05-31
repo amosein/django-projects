@@ -15,13 +15,18 @@
 
 <h3> Home Page </h3>
 
-<p>
-  <a href="{% url 'user_login' %}"> Login </a>
-</p>
+{% if request.user.is_authenticated %}
+  <p>
+    <a href="{% url 'user_logout' %}"> Logout </a>
+  </p>
+  <h5> Welcome {{ request.user.username }}</h5>
 
-<p>
-  <a> Logout </a>
-</p>
+{% else %}
+  <p>
+    <a href="{% url 'user_login' %}"> Login </a>
+  </p>
+{% endif %}
+
 
 <hr/>
 

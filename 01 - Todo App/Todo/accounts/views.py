@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import *
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def user_register(request):
@@ -40,3 +40,8 @@ def user_login(request):
     else:
         form = UserLoginForm()
     return render(request, "login.html", {"form": form})
+
+def user_logout(request):
+    logout(request)
+    messages.success(request, "User Logout successfully !!", "success")
+    return redirect("home")
