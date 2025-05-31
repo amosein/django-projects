@@ -36,12 +36,12 @@ Each folder in this repo is a standalone Django app or mini project. These are n
 
 ### 📝 To-Do App
 A task management tool with:
-•	User authentication with Django’s built-in User model (login/logout)
-•	Todo creation, editing, and deletion using Form and ModelForm
-•	Bootstrap-based simple and clean UI
-•	Flash messages for success/error feedback
-•	SQLite3 database as the default backend
-•	Version 1.0.0 – Future updates will include user-specific Todos and improved structure
+	•	User authentication with Django’s built-in User model (login/logout)
+	•	Todo creation, editing, and deletion using Form and ModelForm
+	•	Bootstrap-based simple and clean UI
+	•	Flash messages for success/error feedback
+	•	SQLite3 database as the default backend
+	•	Version 1.0.0 – Future updates will include user-specific Todos and improved structure
 
 More apps coming soon...
 
