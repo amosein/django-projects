@@ -22,6 +22,8 @@ This is a **basic Todo web application** built with Django as part of my journey
 
 ## 🏗 Folder Structure
 
+<pre lang="markdown">
+```
 01 - Todo App/
 ├── accounts/
 ├── app1/
@@ -29,6 +31,9 @@ This is a **basic Todo web application** built with Django as part of my journey
 ├── db.sqlite3
 ├── manage.py
 └── VERSION
+```
+</pre>
+
 
 ## 🔄 Version
 
