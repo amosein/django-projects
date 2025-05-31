@@ -67,7 +67,14 @@ def middle_update(request):
 
 def middle_delete(request):
     if request.method == "POST":
-        pass
+        form = MiddleDeleteForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            todo_id = cd["id_"]
+            Todo.objects.get(id=todo_id).delete()
+            messages.success(request, "Todo Deleted Successfully", "success")
+            return redirect("home")
+
     else:
         form = MiddleDeleteForm()
     return render(request, "middle_delete.html", {"form": form})
