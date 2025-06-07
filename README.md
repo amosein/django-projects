@@ -1,6 +1,6 @@
-# Django Mini Projects 🚀
+# Django Projects 🚀
 
-Welcome to my Django Mini Projects repository!
+Welcome to my Django Projects repository!
 
 This is a growing collection of Django-based projects I'm building as part of my journey to become a stronger backend developer. Each project here is designed, developed, and maintained by me to practice, learn, and improve. I challenge myself with real-world features, clean code, and creative solutions to push my Django skills to the next level.
 
